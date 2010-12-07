@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{devise_oauth_provider}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nick Marfleet"]
-  s.date = %q{2010-11-24}
+  s.date = %q{2010-12-07}
   s.description = %q{Gem to enable oauth provisioning through devise}
   s.email = %q{nick@sct.com.au}
   s.extra_rdoc_files = [
