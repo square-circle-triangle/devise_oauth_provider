@@ -67,14 +67,16 @@ module Devise
         end
         
         def current_client_application=(app)
-          session['current_client_application'] = @current_client_application = app
+          @current_client_application = app
+          session['current_client_application'] = app.id
         end
 
 
         private #############################
 
         def current_token=(token)
-          session['current_token'] = @current_token = token
+          @current_token = token
+          session['current_token'] = token.id
           if @current_token
             #@current_user=@current_token.account
             self.current_client_application = @current_token.client_application 
