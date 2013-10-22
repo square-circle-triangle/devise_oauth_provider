@@ -16,13 +16,13 @@ module Devise
           valid = if params[:action] == 'request_token'
             if verify_oauth_consumer_signature
               #success!(@current_client_application.account)
-              success!(Account.where("lower(username) = ?", "BlocksApp".downcase).first)
+              success!(Account.where("lower(username) = ?", "PublisherApp".downcase).first)
             else
               fail!(:invalid)
             end
           elsif params[:action] == 'access_token'
             #success!(@current_client_application.account) if verify_oauth_request_token
-            success!(Account.where("lower(username) = ?", "BlocksApp".downcase).first) if verify_oauth_request_token
+            success!(Account.where("lower(username) = ?", "PublisherApp".downcase).first) if verify_oauth_request_token
           else
             succ = verify_oauth_signature
             if succ && @current_token.is_a?(::AccessToken) && !!@current_token.account
